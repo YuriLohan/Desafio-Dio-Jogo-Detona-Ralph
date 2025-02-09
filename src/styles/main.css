@@ -29,15 +29,23 @@
 .panel{
     margin-top: 4rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.panel-row {
+    display: flex;
+    width: 100%;
     justify-content: center;
 }
 .square{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border: 1px solid #000000;
     background-color: #ffe4c4;
-    /* margin: 10px; */
 }
 .enemy{
     background-image: url(../images/ralph.png);
@@ -45,44 +53,39 @@
     background-position: -20px;
     background-color: #ff0000;
 }
+/* Quando a tela for menor que 768px */
 @media (max-width: 768px) {
+    .panel {
+        width: 350px;  /* Ajuste na largura para telas menores */
+    }
+
+    .square {
+        width: 100px;  /* Menor tamanho para as telas médias */
+        height: 100px; /* Menor tamanho para as telas médias */
+    }
+
     .menu {
         flex-direction: column;
         height: auto;
         padding: 10px;
     }
 
-    .menu-lives img {
-        height: 40px;
-    }
-
     .value {
         margin-top: 1rem;
         margin-left: 0;
     }
-
-    .panel {
-        margin-top: 2rem;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .square {
-        width: 120px;
-        height: 120px;
-    }
-
-    #score-text, #time-left-text {
-        font-size: 1.2rem;
-    }
-
-    /* Menor espaçamento entre o menu e o painel */
-    .menu-score, .menu-time, .menu-lives {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 480px) {
+    .panel {
+        width: 300px;  /* Mais ajuste para telas menores */
+    }
+
+    .square {
+        width: 80px;   /* Ajuste do tamanho para as telas pequenas */
+        height: 80px;  /* Ajuste do tamanho para as telas pequenas */
+    }
+
     .menu {
         padding: 5px;
     }
@@ -94,20 +97,6 @@
     .value {
         margin-top: 1rem;
         margin-left: 0;
-    }
-
-    .panel-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .square {
-        width: 100px;
-        height: 100px;
-    }
-
-    .menu-score h2, .menu-time h2 {
-        font-size: 1rem;
     }
 
     #score-text, #time-left-text {
